@@ -31,13 +31,19 @@ namespace ig_keker
 
             {
                 State = "Status: " + status,
-                Details = "InstaKekify",
+                Details = "Best Instagram Multitool",
                 Timestamps = Timestamps.Now,
                 Assets = new Assets() 
                 { 
-                    LargeImageKey = "logo",
+                    LargeImageKey = "icon",
                     LargeImageText = "Coded by: Lon#0666"
+                },
+                Buttons = new Button[]
+                {
+                    new Button(){Label = "Discord Server", Url = "https://discord.gg"},
+                    new Button(){Label = "Coded by Lon#0666", Url = "https://discord.gg"}
                 }
+                
 
             });
 
@@ -51,12 +57,17 @@ namespace ig_keker
 
             {
                 State = "Status: " + status,
-                Details = "InstaKekify",
+                Details = "Best Instagram Multitool",
                 Timestamps = Timestamps.Now,
                 Assets = new Assets()
                 {
-                    LargeImageKey = "logo",
+                    LargeImageKey = "icon",
                     LargeImageText = "Coded by: Lon#0666"
+                },
+                Buttons = new Button[]
+                {
+                    new Button(){Label = "Discord Server", Url = "https://discord.gg"},
+                    new Button(){Label = "Coded by Lon#0666", Url = "https://discord.gg"}
                 }
 
             });
