@@ -80,6 +80,11 @@ namespace ig_keker
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine($"[{DateTime.Now}] Got {result.Value.Inbox.Threads.Count} inbox threads");
+
+                    foreach (var thread in result.Value.Inbox.Threads)
+                    {
+                        Console.WriteLine($"[{DateTime.Now}] Threadname: {thread.Title} : Users: {thread.Users.Count}");
+                    }
                 }
             }
         }

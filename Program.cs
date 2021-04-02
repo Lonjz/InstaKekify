@@ -54,7 +54,7 @@ namespace ig_keker
             else if (choiceS.Equals("3"))
             {
                 Console.ForegroundColor = ConsoleColor.Cyan;
-                ChangeStatus();
+                DM();
                 return;
             }
 
@@ -123,11 +123,25 @@ namespace ig_keker
             user = new Login(userN, pass);
 
             user.login();
-
-            rpc.changeState(customstatus);
             
             Console.ReadLine();
 
+            rpc.changeState(customstatus);
+
+        }
+
+        static void DM()
+        {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("Getting inbox...");
+
+            rpc.changeState("DMing...");
+
+            user.spamDM();
+
+            Console.ReadLine();
+
+            rpc.changeState(customstatus);
         }
 
     }
