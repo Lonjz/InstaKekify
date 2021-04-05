@@ -19,6 +19,8 @@ namespace ig_keker
         private static Discord rpc = new Discord();
         private static bool running = true;
         private static string customstatus = "";
+        private static string passW = "";
+        private static string nickN = "";
         #endregion
 
         static void Main(string[] args)
@@ -113,12 +115,14 @@ namespace ig_keker
             Console.ForegroundColor = ConsoleColor.DarkCyan;
 
             userN = Console.ReadLine();
+            nickN = userN;
 
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("\nEnter your IG password:");
             Console.ForegroundColor = ConsoleColor.DarkCyan;
 
             pass = Console.ReadLine();
+            passW = pass; 
 
             user = new Login(userN, pass);
 
@@ -132,11 +136,22 @@ namespace ig_keker
 
         static void DM()
         {
+
+            if (!loggedIn)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("You are not login! Please log in to access the features.");
+                Console.ReadLine();
+                return;
+            }
+
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Getting inbox...");
 
             rpc.changeState("DMing...");
 
+            user = new Login(nickN, passW);
+            user.login();
             user.spamDM();
 
             Console.ReadLine();

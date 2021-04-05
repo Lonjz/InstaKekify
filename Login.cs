@@ -59,16 +59,6 @@ namespace ig_keker
 
         public async void spamDM()
         {
-            if (!Program.loggedIn)
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("You are not logged into an account! Press any key to continue...");
-                Console.ReadLine();
-                return;
-            } 
-            
-            else   
-            {
                 var result = await api.GetDirectInboxAsync();
                 if (!result.Succeeded)
                 {
@@ -86,7 +76,6 @@ namespace ig_keker
                         Console.WriteLine($"[{DateTime.Now}] Threadname: {thread.Title} : Users: {thread.Users.Count}");
                     }
                 }
-            }
         }
     }
 }
